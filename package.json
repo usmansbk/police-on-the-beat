@@ -14,7 +14,8 @@
     "react-native": "0.61.5",
     "react-native-camera": "^3.16.0",
     "react-native-maps": "0.26.1",
-    "react-native-splash-screen": "^3.2.0"
+    "react-native-splash-screen": "^3.2.0",
+    "react-navigation": "^4.0.10"
   },
   "devDependencies": {
     "@babel/core": "^7.8.3",
