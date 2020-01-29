@@ -9,7 +9,7 @@ export default ({ region, markers=[] }) => (
       ...StyleSheet.absoluteFillObject
     }}
     showsUserLocation
-    minZoomLevel={16}
+    minZoomLevel={17}
   >
     {
       markers.map(marker => (
