@@ -16,6 +16,8 @@ export default () => (
       source={require('../../assets/potb.png')}
     />
     <Headline>Police On The Beat</Headline>
+
+    <Title>Legal</Title>
     <Paragraph>
       Copyright 2020 Final year project 
     </Paragraph>
@@ -30,5 +32,11 @@ export default () => (
     </Title>
     <Caption>Babakolo Usman Suleiman</Caption>
     <Caption>Abubakar</Caption>
+
+    <Title>Version</Title>
+    <Caption>0.0.1-alpha</Caption>
+
+    <Title>Contact</Title>
+    <Caption>usmansbk@gmail.com</Caption>
   </View>
 );
