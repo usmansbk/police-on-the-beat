@@ -27,7 +27,8 @@ export default class LocationStore {
 
   @action watch = async () => {
     const hasLocationPermission = await this.requestLocationPermission();
-    if (hasLocationPermission && !this.eye) {
+    if (this.eye) this.clearWatch();
+    if (hasLocationPermission) {
       this.eye = Geolocation.watchPosition(
         (position) => {
           const { coords } = position;
@@ -53,7 +54,7 @@ export default class LocationStore {
     }
   };
   
-  @action requestLocationPermission = async () => {
+  requestLocationPermission = async () => {
     try {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
