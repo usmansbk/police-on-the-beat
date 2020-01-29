@@ -20,6 +20,7 @@ export default class Container extends React.Component {
         (position) => {
           const { coords } = position;
           const { latitude, longitude } = coords;
+          console.log('Position:', latitude, longitude);
           this.setState(prev => ({
             region: Object.assign({}, prev.region, {
               latitude,
