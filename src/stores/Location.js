@@ -1,33 +1,43 @@
-import React from 'react';
-import { PermissionsAndroid, ToastAndroid } from 'react-native';
+import { action, observable, computed } from 'mobx';
 import Geolocation from 'react-native-geolocation-service';
-import { inject, observer } from 'mobx-react';
-import Screen from './screen';
 
-export default class Container extends React.Component {
-  state = {
-    region: {
-      latitude: 37.78825,
-      longitude: -122.4324,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
+export default class LocationStore {
+  @observable currentPosition = null; 
+
+  initialRegion = {
+    latitude: 37.78825,
+    longitude: -122.4324,
+    latitudeDelta: 0.0922,
+    longitudeDelta: 0.0421,
+  };
+
+  @computed get region() {
+    if (this.currentPosition) {
+      return this.currentPosition;
+    }
+    return this.initialRegion;
+  }
+
+  @action clearWatch = () => {
+    if (this.eye) {
+      Geolocation.clearWatch(this.eye);
     }
   };
 
-  async componentDidMount() {
+  @action watch = async () => {
     const hasLocationPermission = await this.requestLocationPermission();
-    if (hasLocationPermission) {
+    if (hasLocationPermission && !this.eye) {
       this.eye = Geolocation.watchPosition(
         (position) => {
           const { coords } = position;
           const { latitude, longitude } = coords;
           console.log('Position:', latitude, longitude);
-          this.setState(prev => ({
-            region: Object.assign({}, prev.region, {
-              latitude,
-              longitude
-            }),
-          }));
+          this.currentPosition = {
+            latitude,
+            longitude,
+            latitudeDelta: 0.0922,
+            longitudeDelta: 0.0421,
+          }
         },
         (error) => {
           console.log(error.code, error.message);
@@ -40,13 +50,9 @@ export default class Container extends React.Component {
         }
       );
     }
-  }
-
-  componentWillUnmount = () => {
-    Geolocation.clearWatch(this.eye);
   };
   
-  async requestLocationPermission() {
+  @action requestLocationPermission = async () => {
     try {
       const granted = await PermissionsAndroid.request(
         PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
@@ -55,13 +61,6 @@ export default class Container extends React.Component {
     } catch (error) {
       console.log(error);
     }
-  } 
+  };
 
-  render() {
-    return (
-      <Screen
-        region={this.state.region}
-      />
-    );
-  }
 }
