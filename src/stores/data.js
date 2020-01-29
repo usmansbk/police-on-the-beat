@@ -40,10 +40,8 @@ export default class Data {
       description: `A trending video of a church thief has left many Nigerians perplexed after it emerged on social media. The video captured a man stealing an unsuspecting victim's bag during a church service. The video was said to have been taken from the CCTV of an Anglican church in Lagos state, where the incident occurred. In the video, the man was seen walking into the church without holding any bag. He was spotted entering the church while service was going and he stood in front of a bench pretending to be a member.`,
     },
   ];
-  geo_point = null;
 
   markers(location) {
-    console.log(Math.random() * 0.01);
     return this.data.map(item => {
       item.geo_point = {
         latitude: location.latitude - Math.random() * 0.0018,
