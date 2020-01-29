@@ -21,7 +21,8 @@ export default class Data {
       "We're working with police colleagues on the scene. We have got fire investigation officers there who will be working tirelessly throughout today."
       
       He added the father and daughter were the only two people in the property at the time of the blaze.`,
-      color: 'orange'
+      color: 'orange',
+      date: '2018-02-12'
     },
     {
       id: '2',
@@ -32,6 +33,7 @@ export default class Data {
       Officers were called at around 2am to help ambulance crews who were attempting to treat Mr Sinnott after he was found unconscious in the town’s Market Place.
       
       Nottinghamshire Police has now said Cameron Matthews, 21, and Kai Denovan, 22, both from Retford, have been charged with manslaughter as well as affray and common assault.`,
+      date: '2003-07-11'
     },
     {
       id: '3',
@@ -39,7 +41,8 @@ export default class Data {
       subtitle: `Man spotted on camera walking into church, steals a bag during service Read more: https://www.legit.ng/1259935-man-spotted-camera-walking-church-steals-a-bag-service-video.html
       `,
       description: `A trending video of a church thief has left many Nigerians perplexed after it emerged on social media. The video captured a man stealing an unsuspecting victim's bag during a church service. The video was said to have been taken from the CCTV of an Anglican church in Lagos state, where the incident occurred. In the video, the man was seen walking into the church without holding any bag. He was spotted entering the church while service was going and he stood in front of a bench pretending to be a member.`,
-      color: 'yellow'
+      color: 'yellow',
+      date: '2010-04-29'
     },
   ];
 
@@ -53,7 +56,7 @@ export default class Data {
     });
   }
 
-  getCrime(id) {
+  getData(id) {
     const found = this.data.find(item => item.id === id);
     return found;
   }
