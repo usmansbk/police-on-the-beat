@@ -2,7 +2,7 @@ import React from 'react';
 import 'react-native-gesture-handler';
 import SplashScreen from 'react-native-splash-screen';
 import { Provider as PapaerProvider } from 'react-native-paper';
-import Map from './src/components/Map';
+import Navigations from './src';
 
 
 class App extends React.Component {
@@ -13,7 +13,7 @@ class App extends React.Component {
   render() {
     return (
       <PapaerProvider>
-        <Map />
+        <Navigations />
       </PapaerProvider>
     )
   }
