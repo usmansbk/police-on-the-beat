@@ -18,7 +18,6 @@ export default class Container extends React.Component {
     if (hasLocationPermission) {
       this.eye = Geolocation.watchPosition(
         (position) => {
-          console.log(position)
           const { coords } = position;
           const { latitude, longitude } = coords;
           this.setState(prev => ({
@@ -60,7 +59,6 @@ export default class Container extends React.Component {
     return (
       <Screen
         region={this.state.region}
-        me={this.state.me}
       />
     );
   }
