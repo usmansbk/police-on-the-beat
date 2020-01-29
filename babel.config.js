@@ -5,4 +5,8 @@ module.exports = {
       plugins: ['react-native-paper/babel'],
     },
   },
+  plugins: [
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    ["@babel/plugin-proposal-class-properties", { "loose": true }]
+  ]
 };
