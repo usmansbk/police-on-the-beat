@@ -15,9 +15,9 @@ export default ({ region, markers=[] }) => (
       markers.map(marker => (
         <Marker
           key={marker.id}
-          coordinate={marker.location}
+          coordinate={marker.geo_point}
           title={marker.title}
-          description={marker.description}
+          description={marker.subtitle}
         />
       ))
     }
