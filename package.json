@@ -17,6 +17,7 @@
     "react-native": "0.61.5",
     "react-native-geolocation-service": "^3.1.0",
     "react-native-gesture-handler": "^1.5.3",
+    "react-native-hyperlink": "^0.0.19",
     "react-native-maps": "0.26.1",
     "react-native-paper": "^3.5.1",
     "react-native-reanimated": "^1.7.0",
