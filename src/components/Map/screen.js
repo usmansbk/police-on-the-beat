@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
 
-export default ({ region, markers=[] }) => (
+export default ({ region, markers=[], onCalloutPress }) => (
   <MapView
     region={region}
     style={{
@@ -18,6 +18,8 @@ export default ({ region, markers=[] }) => (
           coordinate={marker.geo_point}
           title={marker.title}
           description={marker.subtitle}
+          pinColor={marker.color}
+          onCalloutPress={() => onCalloutPress(marker.id)}
         />
       ))
     }

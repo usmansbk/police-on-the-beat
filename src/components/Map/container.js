@@ -12,11 +12,16 @@ class Container extends React.Component {
     this.props.stores.location.clearWatch();
   };
 
+  _onCalloutPress = (id) => {
+    this.props.navigation.navigate('Details', { id });
+  };
+
   render() {
     return (
       <Screen
         region={this.props.stores.location.region}
         markers={this.props.stores.data.markers(this.props.stores.location.region)}
+        onCalloutPress={this._onCalloutPress}
       />
     );
   }
