@@ -1,6 +1,7 @@
 import React from 'react';
 import { ScrollView, Image } from 'react-native';
 import { Paragraph, Headline, Caption, Title } from 'react-native-paper';
+import Hyperlink from 'react-native-hyperlink';
 
 export default () => (
   <ScrollView contentContainerStyle={{
@@ -18,12 +19,14 @@ export default () => (
     <Headline>Police On The Beat</Headline>
 
     <Title>Legal</Title>
+    <Hyperlink linkDefault linkStyle={{color: '#2980b9'}}>
     <Paragraph>
       All crime data are randomly generated for testing purpose only and have nothing to do with their locations.{'\n\n'}
       Copyright 2020{'\n\n'}
       Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with the License.{'\n\n'}You may obtain a copy of the License at http://www.apache.org/licenses/LICENSE-2.0
       Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.{'\n\n'}See the License for the specific language governing permissions and limitations under the License.
     </Paragraph>
+    </Hyperlink>
 
     <Title>Version</Title>
     <Caption>0.0.1-alpha</Caption>
