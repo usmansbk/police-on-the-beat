@@ -17,7 +17,7 @@ export default class Container extends React.Component {
   async componentDidMount() {
     const hasLocationPermission = await this.requestLocationPermission();
     if (hasLocationPermission) {
-      Geolocation.getCurrentPosition(
+      this.eye = Geolocation.watchPosition(
         (position) => {
           console.log(position)
           const { coords } = position;
@@ -45,6 +45,10 @@ export default class Container extends React.Component {
       );
     }
   }
+
+  componentWillUnmount = () => {
+    Geolocation.clearWatch(this.eye);
+  };
   
   async requestLocationPermission() {
     try {
