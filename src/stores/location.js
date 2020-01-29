@@ -33,7 +33,6 @@ export default class LocationStore {
         (position) => {
           const { coords } = position;
           const { latitude, longitude } = coords;
-          console.log('Position:', latitude, longitude);
           this.currentPosition = {
             latitude,
             longitude,
