@@ -1,3 +1,3 @@
-import Container from './screen';
+import Container from './container';
 
 export default Container;

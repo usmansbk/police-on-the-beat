@@ -1,17 +1,24 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import MapView from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-export default () => (
+export default ({ region, me }) => (
   <MapView
-    initialRegion={{
-      latitude: 37.78825,
-      longitude: -122.4324,
-      latitudeDelta: 0.0922,
-      longitudeDelta: 0.0421,
-    }}
+    region={region}
     style={{
       ...StyleSheet.absoluteFillObject
     }}
-  />
+  >
+    {
+      Boolean(me) && [
+        <Marker
+          key="me"
+          title="Me"
+          coordinate={me}
+          image={require('../../assets/icon.png')}
+        />
+      ]
+    }
+  </MapView>
 );
