@@ -1,10 +1,8 @@
 import React from 'react';
 import 'react-native-gesture-handler';
 import SplashScreen from 'react-native-splash-screen';
-import {
-  View,
-  Text
-} from 'react-native';
+import Map from './src/components/Map';
+
 
 class App extends React.Component {
   componentDidMount() {
@@ -13,9 +11,7 @@ class App extends React.Component {
 
   render() {
     return (
-      <View>
-        <Text>Hello</Text>
-      </View>
+      <Map />
     )
   }
 }
