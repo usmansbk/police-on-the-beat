@@ -16,6 +16,7 @@ class Container extends React.Component {
     return (
       <Screen
         region={this.props.stores.location.region}
+        markers={this.props.stores.data.markers}
       />
     );
   }
