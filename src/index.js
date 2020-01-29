@@ -11,6 +11,10 @@ import Details from './components/Details';
 const MapStack = createStackNavigator({
   Map,
   Details
+}, {
+  defaultNavigationOptions: {
+    headerShown: false 
+  }
 });
 
 const TabNavigator = createBottomTabNavigator({

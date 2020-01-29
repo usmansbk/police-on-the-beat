@@ -5,7 +5,6 @@ import Hyperlink from 'react-native-hyperlink';
 
 export default () => (
   <ScrollView contentContainerStyle={{
-    flex: 1,
     alignItems: 'center',
     padding: 32
   }}>
