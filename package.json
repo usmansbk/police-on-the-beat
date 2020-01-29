@@ -16,6 +16,7 @@
     "react-native-camera": "^3.16.0",
     "react-native-gesture-handler": "^1.5.3",
     "react-native-maps": "0.26.1",
+    "react-native-paper": "^3.5.1",
     "react-native-reanimated": "^1.7.0",
     "react-native-safe-area-context": "^0.6.2",
     "react-native-screens": "^2.0.0-alpha.32",
