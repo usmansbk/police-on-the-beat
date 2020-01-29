@@ -1,4 +1,4 @@
-import { observable, action, computed } from 'mobx';
+import { observable } from 'mobx';
 
 export default class Data {
   @observable data = [
@@ -46,11 +46,16 @@ export default class Data {
     console.log(Math.random() * 0.01);
     return this.data.map(item => {
       item.geo_point = {
-        latitude: location.latitude - Math.random() * 0.001,
-        longitude: location.longitude - Math.random() * 0.001 
+        latitude: location.latitude - Math.random() * 0.0018,
+        longitude: location.longitude - Math.random() * 0.0016 
       };
       return item;
     });
+  }
+
+  getCrime(id) {
+    const found = this.data.find(item => item.id === id);
+    return found;
   }
 
 }
